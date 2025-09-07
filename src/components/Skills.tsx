@@ -5,7 +5,6 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 import Html from '@/img/skill/html.png'
 import JS from '@/img/skill/javascript.png'
 import React from '@/img/skill/react.png'
-import Bootstrap from '@/img/skill/bootstrap.png'
 import MaterialUI from '@/img/skill/mui.png'
 import Jq from '@/img/skill/jquery.png'
 import TailwindCSS from '@/img/skill/tailwind.png'
@@ -40,13 +39,13 @@ export default function Skills() {
   }, [controls, inView]);
 
   const skills: Skill[] = [
-    { name: 'HTML5', level: 98, icon: Html , color: 'from-orange-500 to-red-500' },
+    { name: 'HTML5', level: 98, icon: Html, color: 'from-orange-500 to-red-500' },
     { name: 'CSS3', level: 98, icon: css, color: 'from-blue-500 to-purple-500' },
     { name: 'JavaScript', level: 85, icon: JS, color: 'from-yellow-400 to-orange-500' },
     { name: 'jQuery', level: 80, icon: Jq, color: 'from-blue-600 to-blue-700' },
     { name: 'Bootstrap', level: 95, icon: '🎯', color: 'from-purple-500 to-pink-500' },
     { name: 'Tailwind CSS', level: 95, icon: TailwindCSS, color: 'from-cyan-500 to-blue-500' },
-    { name: 'React JS', level: 80, icon: React , color: 'from-blue-500 to-cyan-500' },
+    { name: 'React JS', level: 80, icon: React, color: 'from-blue-500 to-cyan-500' },
     { name: 'Material-UI', level: 75, icon: MaterialUI, color: 'from-blue-600 to-indigo-600' },
     { name: 'SASS', level: 80, icon: sass, color: 'from-pink-500 to-purple-500' },
     { name: 'TypeScript', level: 75, icon: Typescript, color: 'from-blue-600 to-blue-700' },
@@ -81,7 +80,7 @@ export default function Skills() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +91,7 @@ export default function Skills() {
             Skills & Technologies
           </h2>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            I've worked with a variety of technologies in the web development world.
+            I&apos;ve worked with a variety of technologies in the web development world.
           </p>
         </motion.div>
 
@@ -110,21 +109,21 @@ export default function Skills() {
                 className="skill-card group relative"
                 onMouseEnter={() => setHoveredSkill(skill.name)}
                 onMouseLeave={() => setHoveredSkill(null)}
-                
+
               >
-                <motion.div 
+                <motion.div
                   className="glass-animated rounded-2xl p-3 md:p-4 shadow-lg hover:shadow-xl transition-all duration-200 flex flex-col items-center"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   {/* Skill Icon */}
                   <div className="text-center mb-2">
-                    <div 
+                    <div
                       className={`w-10 h-10 md:w-12 md:h-12 mx-auto rounded-2xl bg-gradient-to-r ${skill.color} flex items-center justify-center text-lg md:text-xl shadow`}
                     >
-                    {typeof skill.icon === 'string' ? (
+                      {typeof skill.icon === 'string' ? (
                         // If it's a string (like emoji)
-                       <>{skill.icon}</>
+                        <>{skill.icon}</>
                       ) : (
                         // Otherwise, assume it's an image (imported local PNG)
                         <Image src={skill.icon} alt={skill.name} width={24} height={24} />
@@ -156,7 +155,7 @@ export default function Skills() {
 
                 {/* Hover Tooltip */}
                 {hoveredSkill === skill.name && (
-                  <div 
+                  <div
                     className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-white dark:bg-slate-800 text-gray-900 dark:text-white text-xs px-3 py-1 rounded-lg whitespace-nowrap z-20 shadow-lg glass"
                   >
                     {skill.level}% Proficiency
@@ -168,7 +167,7 @@ export default function Skills() {
         </motion.div>
 
         {/* Additional Info - More Compact */}
-        <motion.div 
+        <motion.div
           className="mt-8 md:mt-12 text-center max-w-5xl mx-auto"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -180,7 +179,7 @@ export default function Skills() {
               Always Learning
             </h3>
             <p className="text-18 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              I'm constantly expanding my skill set and staying up-to-date with the latest 
+              I&apos;m constantly expanding my skill set and staying up-to-date with the latest
               technologies and best practices in web development.
             </p>
           </div>

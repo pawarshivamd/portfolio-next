@@ -179,7 +179,7 @@ useEffect(() => {
                     <motion.a
                       key={item.name}
                       href={item.href}
-                      onClick={(e) => {
+                      onClick={() => {
                         // e.preventDefault();
                         handleNavClick(item.href.substring(1));
                         console.log("click", item.href);

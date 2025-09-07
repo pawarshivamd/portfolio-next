@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 
 interface Project {
@@ -17,16 +17,9 @@ interface Project {
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('All');
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const projectsRef = useRef(null);
   const controls = useAnimation();
   const inView = useInView(projectsRef);
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
 
   const projects: Project[] = [
     {
@@ -83,24 +76,21 @@ export default function Projects() {
 
   const categories = ['All', 'Frontend', 'Full Stack', 'Mobile'];
 
-  useEffect(() => {
+  const filteredProjects = useMemo(() => {
     if (activeCategory === 'All') {
-      setFilteredProjects(projects);
+      return projects;
     } else {
-      setFilteredProjects(projects.filter(project => project.category === activeCategory));
+      return projects.filter(project => project.category === activeCategory);
     }
-  }, [activeCategory]);
+  }, [activeCategory, projects]);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.1
-      }
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
     }
-  };
+  }, [controls, inView]);
+
+
 
 
 

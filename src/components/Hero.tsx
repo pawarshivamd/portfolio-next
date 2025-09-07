@@ -94,7 +94,7 @@ export default function Hero() {
                     <h1
                       className="text-52  font-bold text-gray-900 dark:text-black"
                     >
-                      Hi, I'm <br className='hidden lg:block' />
+                      Hi, I&apos;m <br className='hidden lg:block' />
                       <span className="">
                         Shivam Pawar
                       </span>
@@ -108,7 +108,7 @@ export default function Hero() {
                       <h2
                         className="text-2xl md:text-4xl text-gray-600 dark:text-gray-700 font-medium"
                       >
-                        I'm a{' '}
+                        I&apos;m a{' '}
                         <span className="font-semibold text-blue-600 dark:text-blue-500">
                           {texts[currentText].split('').map((char, index) => (
                             <span
@@ -135,11 +135,11 @@ export default function Hero() {
                 </div>
                 <div className="hidden lg:block px-5">
                   <div className='relative w-full h-full flex justify-center items-center min-h-[300px]'>
-                    <Image className='absolute top-[-90px] left-[0] max-w-[900px] parallax-image' src={Galaxy} width={243} height={243} loading='lazy' alt={''}/>
+                    <Image className='absolute top-[-90px] left-[0] max-w-[900px] parallax-image' src={Galaxy} width={243} height={243} loading='lazy' alt={''} />
                   </div>
 
-                    <Image className='absolute bottom-[-90px] right-[-50px] max-w-[900px] h-auto parallax-image' src={HeroImage} width={600} height={590} loading='lazy' alt={''}/>
-                    
+                  <Image className='absolute bottom-[-90px] right-[-50px] max-w-[900px] h-auto parallax-image' src={HeroImage} width={600} height={590} loading='lazy' alt={''} />
+
                 </div>
               </div>
             </div>

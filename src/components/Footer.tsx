@@ -96,7 +96,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Footer Links */}
-          {footerLinks.map((section, index) => (
+          {footerLinks.map((section) => (
             <motion.div key={section.title} variants={itemVariants}>
               <h4 className="text-lg font-semibold mb-4 text-white">{section.title}</h4>
               <ul className="space-y-2">
