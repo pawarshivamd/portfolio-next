@@ -1,36 +1,160 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
+
+A modern, responsive portfolio website built with Next.js 15, TypeScript, and Tailwind CSS. Features dark/light mode toggle and smooth animations.
+
+## Features
+
+- 🎨 **Modern Design**: Clean and professional design with smooth animations
+- 🌙 **Dark/Light Mode**: Toggle between dark and light themes
+- 📱 **Responsive**: Fully responsive design that works on all devices
+- ⚡ **Fast**: Built with Next.js 15 for optimal performance
+- 🎯 **SEO Optimized**: Proper meta tags and semantic HTML
+- 🔧 **TypeScript**: Full TypeScript support for better development experience
+
+## Sections
+
+1. **Hero Section**: Animated introduction with rotating text and call-to-action buttons
+2. **Skills Section**: Interactive skill cards with progress bars and hover effects
+3. **Experience Section**: Timeline layout for work experience and education
+4. **Contact Section**: Contact form with validation and contact information
+5. **Header**: Navigation with theme toggle and mobile menu
+6. **Footer**: Social links and additional information
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repo-url>
+cd portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+### Personal Information
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Update the following files with your personal information:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Hero Section** (`src/components/Hero.tsx`):
+   - Change "Your Name" to your actual name
+   - Update the rotating text array with your roles
+   - Modify the description text
+   - Update social media links
 
-## Deploy on Vercel
+2. **Skills Section** (`src/components/Skills.tsx`):
+   - Add/remove skills from the `skills` array
+   - Update skill levels (0-100)
+   - Change skill icons and colors
+   - Modify skill categories
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Experience Section** (`src/components/Experience.tsx`):
+   - Update work experience in the `workExperience` array
+   - Modify education information
+   - Add your achievements and technologies used
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Contact Section** (`src/components/Contact.tsx`):
+   - Update contact information (email, phone, location)
+   - Modify social media links
+   - Customize the contact form
+
+5. **Header & Footer** (`src/components/Header.tsx`, `src/components/Footer.tsx`):
+   - Update your name
+   - Modify navigation links if needed
+   - Update social media links
+
+6. **Layout** (`src/app/layout.tsx`):
+   - Update metadata (title, description, keywords)
+   - Change author information
+
+### Styling
+
+The portfolio uses Tailwind CSS for styling. You can customize:
+
+- **Colors**: Modify the color scheme in the components
+- **Fonts**: Change fonts in `src/app/layout.tsx`
+- **Animations**: Adjust animation durations and effects
+- **Layout**: Modify spacing and layout in the components
+
+### Theme Customization
+
+The dark/light mode is implemented using CSS classes. You can customize the theme colors by modifying the `dark:` prefixed classes in the components.
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy automatically
+
+### Other Platforms
+
+The portfolio can be deployed to any platform that supports Next.js:
+
+- Netlify
+- Railway
+- DigitalOcean App Platform
+- AWS Amplify
+
+## Technologies Used
+
+- **Next.js 15**: React framework with App Router
+- **TypeScript**: Type-safe JavaScript
+- **Tailwind CSS**: Utility-first CSS framework
+- **React Hooks**: State management and side effects
+- **CSS Animations**: Smooth transitions and animations
+
+## File Structure
+
+```
+src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── Contact.tsx
+│   ├── Experience.tsx
+│   ├── Footer.tsx
+│   ├── Header.tsx
+│   ├── Hero.tsx
+│   ├── Skills.tsx
+│   └── ThemeContext.tsx
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Support
+
+If you have any questions or need help customizing the portfolio, feel free to open an issue or contact me.
+
+---
+
+Built with ❤️ using Next.js & Tailwind CSS
