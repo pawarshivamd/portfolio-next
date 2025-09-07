@@ -173,7 +173,7 @@ useEffect(() => {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <div className="pt-4 pb-3 border-t border-white/20 dark:border-slate-600/20">
+              <div className="pt-4 pb-3 border-t border-white/20 dark:border-slate-600/20 glass-gradient-primary rounded-2xl mt-2">
                 <nav className="flex flex-col space-y-3">
                   {navItems.map((item) => (
                     <motion.a
