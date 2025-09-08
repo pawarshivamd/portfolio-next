@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://shivam-pawar7.netlify.app/sitemap.xml
+Sitemap: https://shivam-pawar-7.vercel.app/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1

@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,9 +39,9 @@ export const metadata: Metadata = {
   publisher: "Shivam Pawar",
   robots: "index, follow",
   alternates: {
-    canonical: "https://shivam-pawar7.netlify.app/",
+    canonical: "https://shivam-pawar-7.vercel.app/",
     languages: {
-      'en': "https://shivam-pawar7.netlify.app/",
+      'en': "https://shivam-pawar-7.vercel.app/",
     },
   },
   verification: {
@@ -51,12 +52,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://shivam-pawar7.netlify.app/",
+    url: "https://shivam-pawar-7.vercel.app/",
     title: "Shivam Pawar | Front-End Developer Portfolio",
     description: "Shivam Pawar is a Front-End Developer crafting fast, responsive, and accessible web interfaces using React, Tailwind CSS, and modern JavaScript. Explore a portfolio showcasing high-quality UI/UX design, live projects, and development expertise.",
     images: [
       {
-        url: "https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1752710400&v=beta&t=xtxefsQHkZ0fT2cYkNdtOHYxoc4sCGxcDy8SFQRHa7k",
+        url: "https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1759968000&v=beta&t=bl69TTy6VZZaviDRLnPT8XINYklnE1TWuPuVkJRws4k",
         width: 800,
         height: 800,
         alt: "Shivam Pawar - Front-End Developer",
@@ -69,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shivam Pawar | Front-End Developer Portfolio",
     description: "Explore the portfolio of Shivam Pawar, showcasing front-end development skills including HTML, CSS, JavaScript, and React. Check out my projects and expertise.",
-    images: ["https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1752710400&v=beta&t=xtxefsQHkZ0fT2cYkNdtOHYxoc4sCGxcDy8SFQRHa7k"],
+    images: ["https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1759968000&v=beta&t=bl69TTy6VZZaviDRLnPT8XINYklnE1TWuPuVkJRws4k"],
     creator: "@shivampawar7",
   },
   other: {
@@ -128,8 +129,8 @@ export default function RootLayout({
               "@context": "https://schema.org/",
               "@type": "Person",
               "name": "Shivam Pawar",
-              "url": "https://shivam-pawar7.netlify.app",
-              "image": "https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1752710400&v=beta&t=xtxefsQHkZ0fT2cYkNdtOHYxoc4sCGxcDy8SFQRHa7k",
+              "url": "https://shivam-pawar-7.vercel.app",
+              "image": "https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1759968000&v=beta&t=bl69TTy6VZZaviDRLnPT8XINYklnE1TWuPuVkJRws4k",
               "sameAs": [
                 "https://www.linkedin.com/in/shivam-pawar7",
                 "https://github.com/shivampawar7"
@@ -174,7 +175,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebPage",
               "name": "Shivam Pawar | Front-End Developer Portfolio",
-              "url": "https://shivam-pawar7.netlify.app/",
+              "url": "https://shivam-pawar-7.vercel.app/",
               "description": "Explore the portfolio of Shivam Pawar, showcasing front-end development skills including HTML, CSS, JavaScript, and React.",
               "inLanguage": "en",
               "author": {
@@ -183,11 +184,11 @@ export default function RootLayout({
               },
               "primaryImageOfPage": {
                 "@type": "ImageObject",
-                "url": "https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1752710400&v=beta&t=xtxefsQHkZ0fT2cYkNdtOHYxoc4sCGxcDy8SFQRHa7k"
+                "url": "https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1759968000&v=beta&t=bl69TTy6VZZaviDRLnPT8XINYklnE1TWuPuVkJRws4k"
               },
               "potentialAction": {
                 "@type": "ReadAction",
-                "target": ["https://shivam-pawar7.netlify.app/"]
+                "target": ["https://shivam-pawar-7.vercel.app/"]
               },
               "breadcrumb": {
                 "@type": "BreadcrumbList",
@@ -196,31 +197,31 @@ export default function RootLayout({
                     "@type": "ListItem",
                     "position": 1,
                     "name": "Home",
-                    "item": "https://shivam-pawar7.netlify.app/"
+                    "item": "https://shivam-pawar-7.vercel.app/"
                   },
                   {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Skills",
-                    "item": "https://shivam-pawar7.netlify.app/#skills"
+                    "item": "https://shivam-pawar-7.vercel.app/#skills"
                   },
                   {
                     "@type": "ListItem",
                     "position": 3,
                     "name": "Projects",
-                    "item": "https://shivam-pawar7.netlify.app/#projects"
+                    "item": "https://shivam-pawar-7.vercel.app/#projects"
                   },
                   {
                     "@type": "ListItem",
                     "position": 4,
                     "name": "Experience",
-                    "item": "https://shivam-pawar7.netlify.app/#experience"
+                    "item": "https://shivam-pawar-7.vercel.app/#experience"
                   },
                   {
                     "@type": "ListItem",
                     "position": 5,
                     "name": "Contact",
-                    "item": "https://shivam-pawar7.netlify.app/#contact"
+                    "item": "https://shivam-pawar-7.vercel.app/#contact"
                   }
                 ]
               }
@@ -279,8 +280,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Shivam Pawar Development",
-              "url": "https://shivam-pawar7.netlify.app",
-              "logo": "https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1752710400&v=beta&t=xtxefsQHkZ0fT2cYkNdtOHYxoc4sCGxcDy8SFQRHa7k",
+              "url": "https://shivam-pawar-7.vercel.app",
+              "logo": "https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1759968000&v=beta&t=bl69TTy6VZZaviDRLnPT8XINYklnE1TWuPuVkJRws4k",
               "description": "Professional front-end development services specializing in React, modern web technologies, and responsive design",
               "foundingDate": "2023",
               "contactPoint": {
@@ -304,6 +305,7 @@ export default function RootLayout({
             </main>
             <Footer />
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
