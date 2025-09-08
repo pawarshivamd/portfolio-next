@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     description: "Shivam Pawar is a Front-End Developer crafting fast, responsive, and accessible web interfaces using React, Tailwind CSS, and modern JavaScript. Explore a portfolio showcasing high-quality UI/UX design, live projects, and development expertise.",
     images: [
       {
-        url: "https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1759968000&v=beta&t=bl69TTy6VZZaviDRLnPT8XINYklnE1TWuPuVkJRws4k",
+        url: "https://shivam-pawar-7.vercel.app/profile.webp",
         width: 800,
         height: 800,
         alt: "Shivam Pawar - Front-End Developer",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shivam Pawar | Front-End Developer Portfolio",
     description: "Explore the portfolio of Shivam Pawar, showcasing front-end development skills including HTML, CSS, JavaScript, and React. Check out my projects and expertise.",
-    images: ["https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1759968000&v=beta&t=bl69TTy6VZZaviDRLnPT8XINYklnE1TWuPuVkJRws4k"],
+    images: ["https://shivam-pawar-7.vercel.app/profile.webp"],
     creator: "@shivampawar7",
   },
   other: {
@@ -111,7 +111,7 @@ export default function RootLayout({
         
         {/* Favicon and Icons */}
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png\\" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
@@ -130,7 +130,7 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Shivam Pawar",
               "url": "https://shivam-pawar-7.vercel.app",
-              "image": "https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1759968000&v=beta&t=bl69TTy6VZZaviDRLnPT8XINYklnE1TWuPuVkJRws4k",
+              "image": "https://shivam-pawar-7.vercel.app/profile.webp",
               "sameAs": [
                 "https://www.linkedin.com/in/shivam-pawar7",
                 "https://github.com/shivampawar7"
@@ -184,7 +184,7 @@ export default function RootLayout({
               },
               "primaryImageOfPage": {
                 "@type": "ImageObject",
-                "url": "https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1759968000&v=beta&t=bl69TTy6VZZaviDRLnPT8XINYklnE1TWuPuVkJRws4k"
+                "url": "https://shivam-pawar-7.vercel.app/profile.webp"
               },
               "potentialAction": {
                 "@type": "ReadAction",
@@ -281,7 +281,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Shivam Pawar Development",
               "url": "https://shivam-pawar-7.vercel.app",
-              "logo": "https://media.licdn.com/dms/image/v2/D4D03AQHNI80KcpoT6w/profile-displayphoto-shrink_800_800/B4DZZ9nBquG8Ak-/0/1745864105782?e=1759968000&v=beta&t=bl69TTy6VZZaviDRLnPT8XINYklnE1TWuPuVkJRws4k",
+              "logo": "https://shivam-pawar-7.vercel.app/profile.webp",
               "description": "Professional front-end development services specializing in React, modern web technologies, and responsive design",
               "foundingDate": "2023",
               "contactPoint": {
