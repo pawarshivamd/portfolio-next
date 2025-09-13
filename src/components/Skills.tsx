@@ -71,7 +71,7 @@ export default function Skills() {
 
 
   return (
-    <section ref={skillsRef} id="skills" className="py-16 md:py-20 relative overflow-hidden">
+    <section ref={skillsRef} id="skills" className="py-10 md:py-20 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-br from-blue-200 to-cyan-200 dark:from-blue-900 dark:to-cyan-900 rounded-full blur-2xl"></div>

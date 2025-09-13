@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import Galaxy from '@/img/galaxy.svg';
-import HeroImage from '@/img/hero.png';
+import HeroImage from '@/img/hero.webp';
 
 
 export default function Hero() {
@@ -62,16 +62,16 @@ export default function Hero() {
 
     <>
       <section id="home"
-        className="relative mt-[5rem] mb-20 overflow-hidde"
+        className="relative my-12 md:mt-[5rem] md:mb-20 overflow-hidde"
         aria-label="Hero section - Introduction to Shivam Pawar">
         <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-200 to-cyan-200 dark:from-blue-900 dark:to-cyan-900 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-yellow-100 to-green-100 dark:from-yellow-300 dark:to-green-400 dark:opacity-20 rounded-full blur-3xl"></div>
-          <Image className='absolute top-[-90px] left-[0] max-w-[900px] parallax-image' src={Galaxy} width={243} height={243} loading='lazy' alt='' />
+          <Image className='hidden md:block absolute top-[-90px] left-[0] max-w-[900px] parallax-image' src={Galaxy} width={243} height={243} loading='lazy' alt='' />
         </div>
         <div className="max-w-[87.5rem] mx-auto relative px-4 sm:px-6 lg:px-8  z-10">
           <div className='w-100'>
-            <div className="main relative">
+            <div className="main relative md:d-flex md:align-center md:justify-center">
 
               <svg xmlns="http://www.w3.org/2000/svg" className='hidden md:block absolute top-0 right-[.9375rem] text-[#b0c4de] dark:text-white w-[clamp(3.125rem,-1.8365rem+13.7821vw,8.5rem)] h-auto' width="136" height="53" viewBox="0 0 136 53" fill="none">
                 <rect x="13.4585" width="10" height="52" rx="5" transform="rotate(15 13.4585 0)" fill="currentcolor" />
@@ -92,7 +92,7 @@ export default function Hero() {
                 <div className="py-5 px-5 md:px-12 lg:pb-[8.125rem]">
                   <div className="space-y-6 md:space-y-8">
                     <h1
-                      className="text-52  font-bold text-gray-900 dark:text-black"
+                      className="text-52  font-bold  dark:text-white text-gray-900  md:dark:text-black"
                     >
                       Hi, I&apos;m <br className='hidden lg:block' />
                       <span className="">
@@ -106,7 +106,7 @@ export default function Hero() {
                       aria-label={`Currently showing: ${texts[currentText]}`}
                     >
                       <h2
-                        className="text-2xl md:text-4xl text-gray-600 dark:text-gray-700 font-medium"
+                        className="text-2xl md:text-4xl text-gray-600 dark:text-white md:dark:text-gray-700 font-medium"
                       >
                         I&apos;m a{' '}
                         <span className="font-semibold text-blue-600 dark:text-blue-500">
@@ -126,7 +126,7 @@ export default function Hero() {
                     </div>
 
                     <p
-                      className="text-18 text-gray-600 dark:text-gray-600 "
+                      className="text-18 text-gray-600 dark:text-[#edededf2] md:dark:text-gray-600 "
                     >
                       Passionate about creating beautiful, functional, and user-friendly web applications.
                       I specialize in React, Next.js, and modern web technologies to build high-performance, responsive UIs.

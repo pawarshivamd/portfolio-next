@@ -95,7 +95,7 @@ export default function Projects() {
 
 
   return (
-    <section ref={projectsRef} id="projects" className="py-20 md:py-24 relative overflow-hidden">
+    <section ref={projectsRef} id="projects" className="py-10 md:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
