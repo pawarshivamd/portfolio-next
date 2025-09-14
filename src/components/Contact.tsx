@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   name: string;
@@ -32,17 +33,37 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
+    // EmailJS configuration - Replace with your actual IDs from emailjs.com
+    const serviceId = 'service_d91yued'; // Get from EmailJS dashboard
+    const templateId = 'template_xhhjyij'; // Create a template in EmailJS
+    const publicKey = 'haHeZS8X2dAOy8rzF'; // Public key from EmailJS
 
+    // Initialize EmailJS
+    emailjs.init(publicKey);
+
+    // Prepare template parameters
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      to_email: 'shivampawar1107@gmail.com' // Your Gmail address
+    };
+
+    try {
+      await emailjs.send(serviceId, templateId, templateParams);
+      setSubmitStatus('success');
       // Reset form after 3 seconds
       setTimeout(() => {
         setSubmitStatus('idle');
         setFormData({ name: '', email: '', subject: '', message: '' });
       }, 3000);
-    }, 2000);
+    } catch (error) {
+      console.error('Email send failed:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
 
