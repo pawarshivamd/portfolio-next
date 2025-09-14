@@ -97,6 +97,7 @@ useEffect(() => {
           <div className="flex items-center space-x-4 ms-auto">
             {/* Theme Toggle */}
             <button
+              aria-label="Toggle dark mode"
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-white/10 dark:bg-slate-800/50 backdrop-blur-sm border border-white/20 dark:border-slate-600/20"
             >
@@ -167,15 +168,21 @@ useEffect(() => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className="md:hidden"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden overflow-hidden"
+              initial={{ opacity: 0, height: 0, y: -20 }}
+              animate={{ opacity: 1, height: "auto", y: 0 }}
+              exit={{ opacity: 0, height: 0, y: -20 }}
+              transition={{
+                duration: 0.4,
+                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing for smoother animation
+                opacity: { duration: 0.2 },
+                height: { duration: 0.4 }
+              }}
+              layout
             >
               <div className="pt-4 pb-3 border-t border-white/20 dark:border-slate-600/20 glass-gradient-primary rounded-2xl mt-2">
                 <nav className="flex flex-col space-y-3">
-                  {navItems.map((item) => (
+                  {navItems.map((item, index) => (
                     <motion.a
                       key={item.name}
                       href={item.href}
@@ -185,7 +192,10 @@ useEffect(() => {
                         console.log("click", item.href);
                       }}
                       className="nav-link text-gray-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 font-medium py-2 px-4 rounded-lg hover:bg-white/10 dark:hover:bg-slate-800/50 transition-all duration-200"
-                      whileHover={{ x: 10 }}
+                      initial={{ opacity: 0, x: -100 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.3 }}
+                      whileHover={{ x: 10, scale: 1.02 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       {item.name}

@@ -89,7 +89,7 @@ export default function Hero() {
                 <rect x="69.918" width="10" height="52" rx="5" transform="rotate(15 69.918 0)" fill="currentcolor" />
               </svg>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="py-5 px-5 md:px-12 lg:pb-[8.125rem]">
+                <div className="py-5 md:px-5 md:px-12 lg:pb-[8.125rem]">
                   <div className="space-y-6 md:space-y-8">
                     <h1
                       className="text-52  font-bold  dark:text-white text-gray-900  md:dark:text-black"
@@ -135,10 +135,10 @@ export default function Hero() {
                 </div>
                 <div className="hidden lg:block px-5">
                   <div className='relative w-full h-full flex justify-center items-center min-h-[300px]'>
-                    <Image className='absolute top-[-90px] left-[0] max-w-[900px] parallax-image' src={Galaxy} width={243} height={243} loading='lazy' alt={''} />
+                    <Image className='absolute top-[-90px] left-[0] max-w-[900px] parallax-image' src={Galaxy} width={243} height={243} loading='lazy' alt={'galaxy'} />
                   </div>
 
-                  <Image className='absolute bottom-[-90px] right-[-50px] max-w-[900px] h-auto parallax-image' src={HeroImage} width={600} height={590} loading='lazy' alt={''} />
+                  <Image className='absolute bottom-[-90px] right-[-50px] max-w-[900px] h-auto parallax-image' src={HeroImage} width={600} height={590} loading='eager' alt={'hero'} />
 
                 </div>
               </div>

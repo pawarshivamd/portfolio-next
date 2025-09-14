@@ -199,7 +199,7 @@ export default function Projects() {
               {project.liveUrl && (
               <div className="butn-vid flex items-center dark:bg-white bg-gray-950 ">
                 <div className="play-button">
-                  <a  href={project.liveUrl} className="vid position-relative text-white dark:text-black">
+                  <a  href={project.liveUrl} className="vid position-relative text-white dark:text-black" aria-label={project.title}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
                       <path d="M7 17L17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>

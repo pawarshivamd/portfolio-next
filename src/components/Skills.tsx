@@ -111,10 +111,8 @@ export default function Skills() {
                 onMouseLeave={() => setHoveredSkill(null)}
 
               >
-                <motion.div
+                <div
                   className="glass-animated rounded-2xl p-3 md:p-4 shadow-lg hover:shadow-xl transition-all duration-200 flex flex-col items-center"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                 >
                   {/* Skill Icon */}
                   <div className="text-center mb-2">
@@ -132,9 +130,9 @@ export default function Skills() {
                   </div>
 
                   {/* Skill Name - Smaller font */}
-                  <h4 className="text-center font-medium mb-1 text-xs md:text-sm text-gray-900 dark:text-white">
+                  <h3 className="text-center font-medium mb-1 text-xs md:text-sm text-gray-900 dark:text-white">
                     {skill.name}
-                  </h4>
+                  </h3>
 
                   {/* Progress Bar - Smaller */}
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mb-1 overflow-hidden">
@@ -151,7 +149,7 @@ export default function Skills() {
                   <p className="text-center text-xs font-medium text-gray-600 dark:text-gray-300 hidden md:block">
                     {skill.level}%
                   </p>
-                </motion.div>
+                </div>
 
                 {/* Hover Tooltip */}
                 {hoveredSkill === skill.name && (
