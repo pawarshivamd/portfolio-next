@@ -33,10 +33,10 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // EmailJS configuration - Replace with your actual IDs from emailjs.com
-    const serviceId = 'service_d91yued'; // Get from EmailJS dashboard
-    const templateId = 'template_xhhjyij'; // Create a template in EmailJS
-    const publicKey = 'haHeZS8X2dAOy8rzF'; // Public key from EmailJS
+    // EmailJS configuration from environment variables
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
     // Initialize EmailJS
     emailjs.init(publicKey);
