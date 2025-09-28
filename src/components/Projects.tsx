@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
+import { playClickWithVibration } from '@/utils/sound';
 
 interface Project {
   id: string;
@@ -120,7 +121,10 @@ export default function Projects() {
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => setActiveCategory(category)}
+                onClick={() => {
+                  playClickWithVibration();
+                  setActiveCategory(category);
+                }}
                 className={`px-6 py-2 rounded-md font-medium transition-all duration-200 ${activeCategory === category
                   ? 'bg-blue-600 text-white shadow-md'
                   : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
@@ -187,6 +191,7 @@ export default function Projects() {
                   {project.githubUrl && (
                     <a
                       href={project.githubUrl}
+                      onClick={playClickWithVibration}
                       className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-300 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -199,7 +204,7 @@ export default function Projects() {
               {project.liveUrl && (
               <div className="butn-vid flex items-center dark:bg-white bg-gray-950 ">
                 <div className="play-button">
-                  <a  href={project.liveUrl} className="vid position-relative text-white dark:text-black" aria-label={project.title}>
+                  <a  href={project.liveUrl} onClick={playClickWithVibration} className="vid position-relative text-white dark:text-black" aria-label={project.title}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
                       <path d="M7 17L17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -241,6 +246,7 @@ export default function Projects() {
             </p>
             <a
               href="https://github.com/yourusername"
+              onClick={playClickWithVibration}
               className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:shadow-2xl text-white font-bold rounded-full transition-all duration-300 shadow-xl hover:shadow-3xl transform hover:-translate-y-1"
               target="_blank"
               rel="noopener noreferrer"

@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import Html from '@/img/skill/html.png'
 import JS from '@/img/skill/javascript.png'
 import React from '@/img/skill/react.png'
@@ -28,15 +28,6 @@ interface Skill {
 
 export default function Skills() {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
-  const skillsRef = useRef(null);
-  const controls = useAnimation();
-  const inView = useInView(skillsRef);
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
 
   const skills: Skill[] = [
     { name: 'HTML5', level: 98, icon: Html, color: 'from-orange-500 to-red-500' },
@@ -64,14 +55,19 @@ export default function Skills() {
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.05
+        staggerChildren: 0.02
       }
     }
   };
 
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
 
   return (
-    <section ref={skillsRef} id="skills" className="py-10 md:py-20 relative overflow-hidden">
+    <section id="skills" className="py-10 md:py-20 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-br from-blue-200 to-cyan-200 dark:from-blue-900 dark:to-cyan-900 rounded-full blur-2xl"></div>
@@ -98,18 +94,20 @@ export default function Skills() {
         {/* Skills Grid - More Compact */}
         <motion.div
           className="space-y-8 md:space-y-12"
-          variants={containerVariants}
           initial="hidden"
-          animate={controls}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
         >
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-3 md:gap-6">
             {skills.map((skill, skillIndex) => (
-              <div
+              <motion.div
                 key={skillIndex}
                 className="skill-card group relative"
+                variants={itemVariants}
+                transition={{ duration: 0.4, ease: "easeOut" }}
                 onMouseEnter={() => setHoveredSkill(skill.name)}
                 onMouseLeave={() => setHoveredSkill(null)}
-
               >
                 <div
                   className="glass-animated rounded-2xl p-3 md:p-4 shadow-lg hover:shadow-xl transition-all duration-200 flex flex-col items-center"
@@ -159,7 +157,7 @@ export default function Skills() {
                     {skill.level}% Proficiency
                   </div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

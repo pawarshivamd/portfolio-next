@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "./ThemeContext";
+import { playClickWithVibration } from "@/utils/sound";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -82,6 +83,7 @@ useEffect(() => {
                 href={item.href}
                 onClick={(e) => {
                   e.preventDefault();
+                  playClickWithVibration();
                   handleNavClick(item.href.substring(1));
                 }}
                 className="nav-link text-gray-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 font-medium transition-colors duration-200"
@@ -98,7 +100,10 @@ useEffect(() => {
             {/* Theme Toggle */}
             <button
               aria-label="Toggle dark mode"
-              onClick={toggleTheme}
+              onClick={() => {
+                playClickWithVibration();
+                toggleTheme();
+              }}
               className="p-2 rounded-lg bg-white/10 dark:bg-slate-800/50 backdrop-blur-sm border border-white/20 dark:border-slate-600/20"
             >
               {theme === "light" ? (
@@ -133,7 +138,11 @@ useEffect(() => {
 
             {/* Mobile Menu Button */}
             <motion.button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle Menu btn"
+              onClick={() => {
+                playClickWithVibration();
+                setIsMenuOpen(!isMenuOpen);
+              }}
               className="md:hidden p-2 rounded-lg bg-white/10 dark:bg-slate-800/50 backdrop-blur-sm border border-white/20 dark:border-slate-600/20"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -187,7 +196,7 @@ useEffect(() => {
                       key={item.name}
                       href={item.href}
                       onClick={() => {
-                        // e.preventDefault();
+                        playClickWithVibration();
                         handleNavClick(item.href.substring(1));
                         console.log("click", item.href);
                       }}
