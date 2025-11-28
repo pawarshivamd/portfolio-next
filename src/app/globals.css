@@ -33,11 +33,6 @@ html {
   font-size: 1.11111vw;
   word-break: break-word;
 }
-@media (max-width: 1080px) {
-  html {
-      font-size: 12px !important;
-  }
-}
 
 @media (max-width: 1080px) {
   :root {
