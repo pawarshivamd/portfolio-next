@@ -1,6 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  container:true,
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,47 +9,47 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class', // Enable class-based dark mode
+  darkMode: 'class',
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        lg: '2rem',
+      },
+    },
     extend: {
       colors: {
-        // Primary (Blue)
         primary: {
           light: '#d4e6ff',
           DEFAULT: '#0d6efd',
           dark: '#0a58ca',
         },
-        // Secondary (Gray)
         secondary: {
           light: '#e2e3e5',
           DEFAULT: '#6c757d',
           dark: '#565e64',
         },
-        // Success (Green)
         success: {
           light: '#d1e7dd',
           DEFAULT: '#198754',
           dark: '#146c43',
         },
-        // Danger (Red)
         danger: {
           light: '#f8d7da',
           DEFAULT: '#dc3545',
           dark: '#b02a37',
         },
-        // Warning (Yellow)
         warning: {
           light: '#fff3cd',
           DEFAULT: '#ffc107',
           dark: '#ffca2c',
         },
-        // Info (Cyan)
         info: {
           light: '#cff4fc',
           DEFAULT: '#0dcaf0',
           dark: '#0aa2c0',
         },
-        // Dark (Black)
         dark: {
           light: '#d3d3d4',
           DEFAULT: '#212529',
@@ -78,4 +78,6 @@ module.exports = {
     },
   },
   plugins: [],
-}; 
+};
+
+export default config;

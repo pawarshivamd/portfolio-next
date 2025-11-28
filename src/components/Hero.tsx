@@ -67,9 +67,11 @@ export default function Hero() {
         <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-200 to-cyan-200 dark:from-blue-900 dark:to-cyan-900 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-yellow-100 to-green-100 dark:from-yellow-300 dark:to-green-400 dark:opacity-20 rounded-full blur-3xl"></div>
-          <Image className='hidden md:block absolute top-[-90px] left-[0] max-w-[900px] parallax-image' src={Galaxy} width={243} height={243} loading='lazy' alt='' />
+          <div className='hidden md:block absolute top-[-5.625rem] left-[0] max-w-[56.25rem] parallax-image'>
+          <Image className='w-[15.1875rem] h-[15.1875rem]' src={Galaxy} width={243} height={243} loading='lazy' alt='' />
+          </div>
         </div>
-        <div className="max-w-[87.5rem] mx-auto relative px-4 sm:px-6 lg:px-8  z-10">
+        <div className=" mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className='w-100'>
             <div className="main relative md:d-flex md:align-center md:justify-center">
 
@@ -89,10 +91,10 @@ export default function Hero() {
                 <rect x="69.918" width="10" height="52" rx="5" transform="rotate(15 69.918 0)" fill="currentcolor" />
               </svg>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="py-5 md:px-5 md:px-12 lg:pb-[8.125rem]">
+                <div className="py-5 md:px-5 md:px-12 lg:pb-[8.125rem] xl:ps-[4.25rem] lg:ps-[3.25rem] lg:pt-[3.25rem]">
                   <div className="space-y-6 md:space-y-8">
                     <h1
-                      className="text-52  font-bold  dark:text-white text-gray-900  md:dark:text-black"
+                      className="text-52 leading-tight font-bold  dark:text-white text-gray-900  md:dark:text-black"
                     >
                       Hi, I&apos;m <br className='hidden lg:block' />
                       <span className="">
@@ -134,11 +136,14 @@ export default function Hero() {
                   </div>
                 </div>
                 <div className="hidden lg:block px-5">
-                  <div className='relative w-full h-full flex justify-center items-center min-h-[300px]'>
-                    <Image className='absolute top-[-90px] left-[0] max-w-[900px] parallax-image' src={Galaxy} width={243} height={243} loading='lazy' alt={'galaxy'} />
+                  <div className='relative w-full h-full flex justify-center items-center min-h-[18.75rem]'>
+                    <div className='absolute top-[-5.625rem] left-[0] max-w-[56.25rem] parallax-image'>
+                    <Image className='w-[15.1875rem] h-[15.1875rem]' src={Galaxy} width={243} height={243} loading='lazy' alt={'galaxy'} />
                   </div>
-
-                  <Image className='absolute bottom-[-90px] right-[-50px] max-w-[900px] h-auto parallax-image' src={HeroImage} width={600} height={590} loading='eager' alt={'hero'} />
+                  </div>
+                  <div className='absolute bottom-[-5.625rem] right-[-3.125rem] max-w-[56.25rem] h-auto parallax-image'>
+                  <Image className='w-[37.5rem] h-[36.875rem]' src={HeroImage} width={600} height={590} loading='eager' alt={'hero'} />
+                  </div>
 
                 </div>
               </div>

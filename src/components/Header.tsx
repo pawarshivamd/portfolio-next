@@ -21,7 +21,7 @@ useEffect(() => {
     setIsScrolled(currentScrollY > 50);
     
     // Hide/show navbar logic
-    if (currentScrollY > 100) { // Only start hiding after scrolling 100px
+    if (currentScrollY > 100) { // Only start hiding after scrolling 6.25rem
       if (currentScrollY > lastScrollY) {
         // Scrolling down - add negative margin (hide)
         setIsNavbarHidden(true);
@@ -71,7 +71,7 @@ useEffect(() => {
           : "translate-y-0"
       }`}
     >
-      <div className="max-w-[1400PX] mx-auto px-4 pt-1 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-1">
         <div className="flex items-center justify-between">
           <nav className={`hidden md:flex items-center space-x-8 py-4 px-7 rounded-full  glass-animated 
             ${     isScrolled

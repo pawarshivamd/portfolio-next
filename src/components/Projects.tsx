@@ -16,74 +16,74 @@ interface Project {
   year: string;
 }
 
+const PROJECTS: Project[] = [
+  {
+    id: '1',
+    title: 'E-commerce Dashboard',
+    description: 'A comprehensive dashboard for managing an e-commerce platform with real-time analytics and inventory management.',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Chart.js'],
+    category: 'Frontend',
+    year: '2024',
+    liveUrl: 'https://example.com/ecommerce-dashboard',
+    githubUrl: 'https://example.com/ecommerce-dashboard',
+  },
+  {
+    id: '2',
+    title: 'Task Management App',
+    description: 'A collaborative task management application with real-time updates and team features.',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
+    category: 'Full Stack',
+    year: '2023'
+  },
+  {
+    id: '3',
+    title: 'Portfolio Website',
+    description: 'A responsive portfolio website with modern design and smooth animations.',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    category: 'Frontend',
+    year: '2024'
+  },
+  {
+    id: '4',
+    title: 'Weather Dashboard',
+    description: 'A weather dashboard that displays current conditions and forecasts for multiple locations.',
+    technologies: ['React', 'Redux', 'CSS Modules', 'OpenWeather API'],
+    category: 'Frontend',
+    year: '2023'
+  },
+  {
+    id: '5',
+    title: 'Blog CMS',
+    description: 'A content management system for creating and managing blog posts with markdown support.',
+    technologies: ['Next.js', 'MongoDB', 'Express', 'Node.js'],
+    category: 'Full Stack',
+    year: '2023'
+  },
+  {
+    id: '6',
+    title: 'Fitness Tracker',
+    description: 'A mobile-responsive fitness tracking application with workout planning and progress visualization.',
+    technologies: ['React Native', 'Firebase', 'Redux', 'Chart.js'],
+    category: 'Mobile',
+    year: '2024'
+  }
+];
+
+const CATEGORIES = ['All', 'Frontend', 'Full Stack', 'Mobile'];
+
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('All');
   const projectsRef = useRef(null);
   const controls = useAnimation();
   const inView = useInView(projectsRef);
 
-  const projects: Project[] = [
-    {
-      id: '1',
-      title: 'E-commerce Dashboard',
-      description: 'A comprehensive dashboard for managing an e-commerce platform with real-time analytics and inventory management.',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Chart.js'],
-      category: 'Frontend',
-      year: '2024',
-      liveUrl: 'https://example.com/ecommerce-dashboard',
-      githubUrl: 'https://example.com/ecommerce-dashboard',
-    },
-    {
-      id: '2',
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates and team features.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-      category: 'Full Stack',
-      year: '2023'
-    },
-    {
-      id: '3',
-      title: 'Portfolio Website',
-      description: 'A responsive portfolio website with modern design and smooth animations.',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-      category: 'Frontend',
-      year: '2024'
-    },
-    {
-      id: '4',
-      title: 'Weather Dashboard',
-      description: 'A weather dashboard that displays current conditions and forecasts for multiple locations.',
-      technologies: ['React', 'Redux', 'CSS Modules', 'OpenWeather API'],
-      category: 'Frontend',
-      year: '2023'
-    },
-    {
-      id: '5',
-      title: 'Blog CMS',
-      description: 'A content management system for creating and managing blog posts with markdown support.',
-      technologies: ['Next.js', 'MongoDB', 'Express', 'Node.js'],
-      category: 'Full Stack',
-      year: '2023'
-    },
-    {
-      id: '6',
-      title: 'Fitness Tracker',
-      description: 'A mobile-responsive fitness tracking application with workout planning and progress visualization.',
-      technologies: ['React Native', 'Firebase', 'Redux', 'Chart.js'],
-      category: 'Mobile',
-      year: '2024'
-    }
-  ];
-
-  const categories = ['All', 'Frontend', 'Full Stack', 'Mobile'];
-
   const filteredProjects = useMemo(() => {
     if (activeCategory === 'All') {
-      return projects;
-    } else {
-      return projects.filter(project => project.category === activeCategory);
+      return PROJECTS;
     }
-  }, [activeCategory, projects]);
+
+    return PROJECTS.filter(project => project.category === activeCategory);
+  }, [activeCategory]);
 
   useEffect(() => {
     if (inView) {
@@ -118,7 +118,7 @@ export default function Projects() {
         {/* Category Filter */}
         <div className="flex justify-center mb-12">
           <div className="bg-white dark:bg-slate-800 rounded-lg p-1 shadow-lg">
-            {categories.map((category) => (
+            {CATEGORIES.map((category) => (
               <button
                 key={category}
                 onClick={() => {
@@ -205,14 +205,14 @@ export default function Projects() {
               <div className="butn-vid flex items-center dark:bg-white bg-gray-950 ">
                 <div className="play-button">
                   <a  href={project.liveUrl} onClick={playClickWithVibration} className="vid position-relative text-white dark:text-black" aria-label={project.title}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <svg className='w-[1.375rem] h-[1.375rem]' xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
                       <path d="M7 17L17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </a>
                 </div>
                 <div className="shaps bottom">
                   <div className="shap-left-top text-dark dark:text-white absolute top-[-1rem] right-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 60 60" fill="none">
+                    <svg className='w-[1rem] h-[1rem]' xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 60 60" fill="none">
                         <path d="M0 60H60V0C58.4746 36.1017 31.5254 58.9831 0 60Z" fill="currentcolor" />
                     </svg>
                   </div>

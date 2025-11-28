@@ -1,9 +1,28 @@
 // Utility for playing click sound and vibration
 
+type ExtendedWindow = Window &
+  typeof globalThis & {
+    webkitAudioContext?: typeof AudioContext;
+  };
+
+const getAudioContext = () => {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
+  const extendedWindow = window as ExtendedWindow;
+  return extendedWindow.AudioContext || extendedWindow.webkitAudioContext || null;
+};
+
 export const playClickSound = () => {
   try {
-    // Create audio context
-    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+    const AudioContextClass = getAudioContext();
+
+    if (!AudioContextClass) {
+      return;
+    }
+
+    const audioContext = new AudioContextClass();
 
     // Create oscillator for beep sound
     const oscillator = audioContext.createOscillator();
@@ -30,7 +49,7 @@ export const playClickSound = () => {
 };
 
 export const vibrate = () => {
-  if (navigator.vibrate) {
+  if (typeof navigator !== 'undefined' && navigator.vibrate) {
     navigator.vibrate(50); // Vibrate for 50ms
   }
 };
